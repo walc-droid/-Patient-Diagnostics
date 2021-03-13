@@ -1,0 +1,12 @@
+pl\walcdroid\config\AppInitializer.class
+pl\walcdroid\Test\PatientsController.class
+pl\walcdroid\Test\MedController.class
+pl\walcdroid\Test\MedDao.class
+pl\walcdroid\Test\PatientsRepo.class
+pl\walcdroid\config\AppConfig.class
+pl\walcdroid\converter\PatConverter.class
+pl\walcdroid\converter\MedicalConverter.class
+pl\walcdroid\Test\PatDao.class
+pl\walcdroid\Test\Med.class
+pl\walcdroid\Test\Patients.class
+pl\walcdroid\Test\MedRepo.class
