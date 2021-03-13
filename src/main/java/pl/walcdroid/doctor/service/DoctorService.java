@@ -18,11 +18,11 @@ public class DoctorService {
         this.doctorRepository = doctorRepository;
     }
 
-    public void saveDoctor (Doctor doctor) {
+    public void save (Doctor doctor) {
         this.doctorRepository.save(doctor);
     }
 
-    public void deleteDoctor (Long id) {
+    public void delete (Long id) {
         this.doctorRepository.deleteById(id);
     }
 

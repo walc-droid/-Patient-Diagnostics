@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.walcdroid.patient.entity.Patient;
 import pl.walcdroid.patient.repository.PatientRepository;
+import pl.walcdroid.patient.service.PatientService;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,15 +21,15 @@ import java.util.Optional;
 @RequestMapping("/patient")
 public class PatientContoller {
 
-    private PatientRepository patientRepository;
+    private PatientService patientService;
 
-    public PatientContoller(PatientRepository patientRepository) {
-        this.patientRepository = patientRepository;
+    public PatientContoller(PatientService patientService) {
+        this.patientService = patientService;
     }
 
     @GetMapping("/list")
     public String list (Model model) {
-        List<Patient> patientList = this.patientRepository.findAll();
+        List<Patient> patientList = this.patientService.findAll();
         model.addAttribute("patients", patientList);
         return "Patient/Patient_LIST";
     }
@@ -41,26 +42,26 @@ public class PatientContoller {
 
     @PostMapping("/add")
     public String addPost (Patient patient) {
-        this.patientRepository.save(patient);
+        this.patientService.save(patient);
         return "redirect:/patient/list";
     }
 
     @GetMapping("/edit/{id}")
     public String edit (@PathVariable Long id,Model model) {
-        Patient patient = this.patientRepository.getById(id);
+        Patient patient = this.patientService.getById(id);
         model.addAttribute("patient", patient);
         return "Patient/Patient_EDIT";
     }
 
     @PostMapping("/edit/{id}")
     public String editPost (Patient patient) {
-        this.patientRepository.save(patient);
+        this.patientService.save(patient);
         return "redirect:/patient/list";
     }
 
     @GetMapping("/delete/{id}")
     public String delete (@PathVariable Long id) {
-       this.patientRepository.deleteById(id);
+       this.patientService.delete(id);
        return "redirect:/patient/list";
     }
 

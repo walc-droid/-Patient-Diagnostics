@@ -6,12 +6,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.walcdroid.doctor.entity.Doctor;
 import pl.walcdroid.doctor.repository.DoctorRepository;
+import pl.walcdroid.doctor.service.DoctorService;
 import pl.walcdroid.medicalExamination.entity.MedicalExamination;
 import pl.walcdroid.medicalExamination.repository.MedicalExaminationRepository;
+import pl.walcdroid.medicalExamination.service.MedicalExaminationService;
 import pl.walcdroid.patient.entity.Patient;
 import pl.walcdroid.patient.repository.PatientRepository;
+import pl.walcdroid.patient.service.PatientService;
 import pl.walcdroid.visit.entity.Visit;
 import pl.walcdroid.visit.repository.VisitRepository;
+import pl.walcdroid.visit.service.VisitService;
 
 import java.util.List;
 
@@ -20,21 +24,21 @@ import java.util.List;
 @RequestMapping("/visit")
 public class VisitController {
 
-    private VisitRepository visitRepository;
-    private PatientRepository patientRepository;
-    private DoctorRepository doctorRepository;
-    private MedicalExaminationRepository medicalExaminationRepository;
+    private VisitService visitService;
+    private PatientService patientService;
+    private DoctorService doctorService;
+    private MedicalExaminationService medicalExaminationService;
 
-    public VisitController(VisitRepository visitRepository, PatientRepository patientRepository, DoctorRepository doctorRepository, MedicalExaminationRepository medicalExaminationRepository) {
-        this.visitRepository = visitRepository;
-        this.patientRepository = patientRepository;
-        this.doctorRepository = doctorRepository;
-        this.medicalExaminationRepository = medicalExaminationRepository;
+    public VisitController(VisitService visitService, PatientService patientService, DoctorService doctorService, MedicalExaminationService medicalExaminationService) {
+        this.visitService = visitService;
+        this.patientService = patientService;
+        this.doctorService = doctorService;
+        this.medicalExaminationService = medicalExaminationService;
     }
 
     @GetMapping("/list")
     public String list (Model model) {
-        List<Visit> visits = this.visitRepository.findAll();
+        List<Visit> visits = this.visitService.findAll();
         model.addAttribute("visit",visits);
         return "Visit/Visit_LIST";
     }
@@ -48,43 +52,43 @@ public class VisitController {
 
     @PostMapping("/add")
     public String addPost(Visit visit) {
-        this.visitRepository.save(visit);
+        this.visitService.save(visit);
         return "redirect:/visit/list";
     }
 
     @GetMapping("/edit/{id}")
     public String edit (@PathVariable Long id, Model model) {
-        Visit visit = this.visitRepository.getById(id);
+        Visit visit = this.visitService.getById(id);
         model.addAttribute("visit",visit);
         return "Visit/Visit_EDIT";
     }
 
     @PostMapping("/edit/{id}")
     public String editPost (Visit visit) {
-        this.visitRepository.save(visit);
+        this.visitService.save(visit);
         return "redirect:/visit/list";
     }
 
     @GetMapping("/delete/{id}")
     public String delete (@PathVariable Long id) {
-        this.visitRepository.deleteById(id);
+        this.visitService.delete(id);
         return "redirect:/visit/list";
     }
 
 
     @ModelAttribute("patient")
     public List<Patient> patients() {
-        return this.patientRepository.findAll();
+        return this.patientService.findAll();
     }
 
     @ModelAttribute("doctor")
     public List<Doctor> doctors() {
-        return this.doctorRepository.findAll();
+        return this.doctorService.findAll();
     }
 
     @ModelAttribute("medical")
     public List<MedicalExamination> medicalExaminations() {
-        return this.medicalExaminationRepository.findAll();
+        return this.medicalExaminationService.findAll();
     }
 
 }

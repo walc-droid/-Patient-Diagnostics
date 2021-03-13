@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.walcdroid.doctor.entity.Doctor;
 import pl.walcdroid.doctor.repository.DoctorRepository;
+import pl.walcdroid.doctor.service.DoctorService;
 import pl.walcdroid.medicalExamination.entity.MedicalExamination;
 import pl.walcdroid.medicalExamination.repository.MedicalExaminationRepository;
+import pl.walcdroid.medicalExamination.service.MedicalExaminationService;
 
 
 import java.util.List;
@@ -18,23 +20,22 @@ import java.util.Optional;
 @RequestMapping("/medical")
 public class MedicalExaminationController {
 
-    private DoctorRepository doctorRepository;
-    private MedicalExaminationRepository medicalExaminationRepository;
+    private DoctorService doctorService;
+    private MedicalExaminationService medicalExaminationService;
 
-    public MedicalExaminationController(DoctorRepository doctorRepository, MedicalExaminationRepository medicalExaminationRepository) {
-        this.doctorRepository = doctorRepository;
-        this.medicalExaminationRepository = medicalExaminationRepository;
+    public MedicalExaminationController(DoctorService doctorService, MedicalExaminationService medicalExaminationService) {
+        this.doctorService = doctorService;
+        this.medicalExaminationService = medicalExaminationService;
     }
 
     @GetMapping("/list")
     public String list (Model model) {
 
-        List<MedicalExamination> medicalExaminations = medicalExaminationRepository.findAll();
+        List<MedicalExamination> medicalExaminations = medicalExaminationService.findAll();
 
         for (int i = 0; i < medicalExaminations.size(); i++) {
             medicalExaminations.get(i).getDoctorList();
         }
-
 
         model.addAttribute("medical", medicalExaminations);
 
@@ -50,32 +51,32 @@ public class MedicalExaminationController {
 
     @PostMapping("/add")
     public String addPost (MedicalExamination medicalExamination) {
-        this.medicalExaminationRepository.save(medicalExamination);
+        this.medicalExaminationService.save(medicalExamination);
         return "redirect:/medical/list";
     }
 
     @GetMapping("/edit/{id}")
     public String edit (@PathVariable Long id, Model model) {
-        MedicalExamination medicalExamination = this.medicalExaminationRepository.getById(id);
+        MedicalExamination medicalExamination = this.medicalExaminationService.getById(id);
         model.addAttribute("medicalExamination",medicalExamination);
         return "MedicalExamination/MedicalExamination_EDIT";
     }
 
     @PostMapping("/edit/{id}")
     public String editPost (MedicalExamination medicalExamination) {
-        this.medicalExaminationRepository.save(medicalExamination);
+        this.medicalExaminationService.save(medicalExamination);
         return "redirect:/medical/list";
     }
 
     @GetMapping("/delete/{id}")
     public String delete (@PathVariable Long id) {
-        this.medicalExaminationRepository.deleteById(id);
+        this.medicalExaminationService.delete(id);
         return "redirect:/medical/list";
     }
 
     @ModelAttribute("doctor")
     public List<Doctor> doctors() {
-        return this.doctorRepository.findAll();
+        return this.doctorService.findAll();
     }
 
 

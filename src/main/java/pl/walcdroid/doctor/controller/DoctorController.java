@@ -46,7 +46,7 @@ public class DoctorController {
             return "Doctor/Doctor_ADD";
         }
 
-        this.doctorService.saveDoctor(doctor);
+        this.doctorService.save(doctor);
         return "redirect:/doctor/list";
     }
 
@@ -59,13 +59,13 @@ public class DoctorController {
 
     @PostMapping("/edit/{id}")
     public String editPost (Doctor doctor) {
-        this.doctorService.saveDoctor(doctor);
+        this.doctorService.save(doctor);
         return "redirect:/doctor/list";
     }
 
     @GetMapping("/delete/{id}")
     public String delete (@PathVariable Long id) {
-        this.doctorService.deleteDoctor(id);
+        this.doctorService.delete(id);
         return "redirect:/doctor/list";
     }
 }
