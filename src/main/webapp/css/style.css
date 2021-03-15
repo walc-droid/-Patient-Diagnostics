@@ -46,18 +46,17 @@ form.container {
     margin: 20px;
 }
 
-.collection-own {
-    background: #0D47A1;
-    border: none;
+.collection-item-own ii {
+    margin-right: 15px;
+    display: block;
+    float: left;
 }
 
-.collection-own .collection-item-own {
-    background-color: blue;
-    border-bottom: yellow;
-}
+
 
 .collection-own .collection-item-own i {
-
+    background-color: white;
+    border-bottom: black;
     margin-right: 15px;
     display: block;
     float: left;
@@ -75,9 +74,9 @@ form.container {
     background-color: black;
 }
 
-.tabs .tab a:hover, .tabs .tab a.active {
-    color: #26a69a;
-}
+/*.tabs .tab a:hover, .tabs .tab a.active {*/
+/*    color: #26a69a;*/
+/*}*/
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
     color: black;
@@ -101,11 +100,11 @@ form.container {
     width:90%;
 }
 
-.main-login{
-    width: 100%;
-    min-height: 90vh;
-    background:linear-gradient(180deg,#00838F,#00BCD4);
-    background-size: cover;
-}
+/*.main-login{*/
+/*    width: 100%;*/
+/*    min-height: 90vh;*/
+/*    background:linear-gradient(180deg,#00838F,#00BCD4);*/
+/*    background-size: cover;*/
+/*}*/
 /* login end */
 

@@ -11,7 +11,7 @@ public class HomePageController {
     @GetMapping
     public String homePage () {
 //        return "HomePage/HomePage1";
-        return "HomePage/HomePage";
+        return "HomePage/test";
     }
 
 }

@@ -1,120 +1,55 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: walcu
-  Date: 03.03.2021
-  Time: 23:42
-  To change this template use File | Settings | File Templates.
---%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form"
-           uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="input" uri="http://www.springframework.org/tags/form" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Patients List</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="<c:url value="/css/materialize.min.css"/>">
+    <link type="text/css" rel="stylesheet" href="<c:url value="/css/style1.css"/>">
 </head>
 <body>
-<form:form method="post" modelAttribute="patient">
+<%@include file="../HomePage/header.jsp" %>
+<main>
+    <div class="row row-container">
+        <jsp:include page="../HomePage/navbar.jsp"/>
+        <div class="col s3 offset-s3">
+            <div class="card">
+                <div class="card-content">
+                    <h5 class="h4-own center-align"> <i class="small material-icons blue-text prefix">accessibility</i>Add new patient</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 l10">
+            <div class="card">
+                <form method="post" action="/patient/add">
+                    <div class="row">
+                        <div class="card-content">
 
-    <div>
-        <form:label path="name">Name: </form:label>
-        <form:input path="name"/>
-    </div>
-
-    <div>
-        <form:label path="surname">Surname: </form:label>
-        <form:textarea path="surname"/>
-    </div>
-
-    <div>
-        <form:label path="dateOfBirth">dateOfBirth: </form:label>
-        <form:input path="dateOfBirth"/>
-    </div>
-
-
-    <div>
-        <form:label path="pesel">Pesel: </form:label>
-        <form:input path="pesel"/>
-    </div>
-
-    <div>
-        <form:label path="city">City: </form:label>
-        <form:input path="city"/>
-    </div>
-
-    <div>
-        <form:label path="street">Street: </form:label>
-        <form:input path="street"/>
-    </div>
-
-    <div>
-        <form:label path="zipCode">ZipCode: </form:label>
-        <form:input path="zipCode"/>
-    </div>
-
-    <div>
-        <form:label path="houseNumber">HouseNumber: </form:label>
-        <form:input path="houseNumber"/>
-    </div>
-
-    <div>
-        <form:label path="apartmentNumber">ApartmentNumber: </form:label>
-        <form:input path="apartmentNumber"/>
-    </div>
-
-    <div>
-        <form:label path="phoneNumber">Phone Number: </form:label>
-        <form:input path="phoneNumber"/>
-    </div>
-
-    <div>
-        <form:label path="email">Email: </form:label>
-        <form:input path="email"/>
-    </div>
-
-    <div>
-        <form:label path="symptoms">Symptoms: </form:label>
-        <form:input path="symptoms"/>
-    </div>
-    <div>
-        <form:label path="comorbidities">Comorbidities: </form:label>
-        <form:input path="comorbidities"/>
-    </div>
-
-    <div>
-        <form:label path="medicines">Medicines: </form:label>
-        <form:input path="medicines"/>
-    </div>
-
-    <div>
-        <form:label path="injuries">Injuries: </form:label>
-        <form:input path="injuries"/>
-    </div>
-
-    <div>
-        <form:label path="operations">Operations: </form:label>
-        <form:input path="operations"/>
-    </div>
-
-    <div>
-        <form:label path="drugs">Drugs: </form:label>
-        <form:input path="drugs"/>
-    </div>
-
-    <div>
-        <form:label path="diagnosis">Diagnosis: </form:label>
-        <form:input path="diagnosis"/>
-    </div>
+                            <div class="input-field col m12 l6">
+                                <i class="material-icons prefix blue-text">account_circle</i>
+                                <input id="name" type="text" name="name" required>
+                                <label for="name">Name</label>
+                            </div>
 
 
-    <div>
-        <input type="reset"  value="Clear"/>
-    </div>
-    <div>
-        <input type="submit" value="Add">
-    </div>
+                        </div>
+                    </div>
+
+                    <button class="btn waves-effect waves-light right" type="submit">
+                        Save <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+        </div>
+</main>
 
 
-</form:form>
+
+
+<script type="text/javascript" src="<c:url value="/js/jquery-3.4.1.slim.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/materialize.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/js/functions.js"/>"></script>
 </body>
 </html>
