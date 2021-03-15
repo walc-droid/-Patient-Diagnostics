@@ -83,11 +83,48 @@ th, td {
 
 /* label focus color */
 .input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
-    color: #42a5f5 !important;
+    color: black !important;
 }
 
 /* label underline focus color */
 .input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #42a5f5 !important;
-    box-shadow: 0 1px 0 0 #42a5f5 !important;
+    border-bottom: 1px solid #000000 !important;
+    box-shadow: 0 1px 0 0 #000000 !important;
 }
+
+
+main {
+    flex: 1 0 auto;
+}
+
+strong {
+    font-weight: bold;
+}
+
+form.container {
+    margin: 36px auto 80px;
+}
+
+.table-overflow {
+    overflow-x: auto;
+}
+
+
+
+.row-margin0 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.row-margin0 span {
+    height: 48px;
+    line-height: 48px;
+    margin-left: 20px;
+}
+
+.row-container {
+    margin: 0px;
+}
+
+
+
