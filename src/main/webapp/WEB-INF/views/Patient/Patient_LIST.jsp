@@ -24,44 +24,69 @@
         <div class="col s12 l10">
             <div class="card">
                 <div class="card-content">
-                    <a href="/patient/add" class="waves-effect waves-light btn red white-text"><i
-                            class="material-icons left">add</i>Add Patient</a>
-                    <div class="table-overflow">
-                        <table class="highlight centered responsive-table">
-                            <thead>
-                            <tr>
-                                <th>id</th>
-                                <th>Name</th>
-                                <th>Surname</th>
-                                <th>Date of birth</th>
-                                <th>City</th>
-                                <th>Street</th>
-                                <th>Zip-Code</th>
-                                <th>House number</th>
-                                <th>Apartment number</th>
-                                <th>Phone number</th>
-                                <th>Email</th>
-                                <th>Medical Details</th>
-                                <th>Options</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                    <td>TEST</td>
-                                    <td>TEST</td>
-                                    <td>TEST</td>
-                                    <td>TEST</td>
-                                    <td>TEST</td>
+                    <div class="row">
+                        <a href="/patient/add" class="waves-effect waves-light btn red white-text"><i
+                                class="material-icons left">add</i>Add Patient</a>
+                    </div>
+                    <div class="row">
+                        <div class="table-overflow">
+                            <table class="highlight centered responsive-table">
+                                <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>Name</th>
+                                    <th>Surname</th>
+                                    <th>Date of birth</th>
+                                    <th>Pesel</th>
+                                    <th>City</th>
+                                    <th>Street</th>
+                                    <th>Postcode</th>
+                                    <th>House no.</th>
+                                    <th>Apartment no.</th>
+                                    <th>Phone no.</th>
+                                    <th>Email</th>
+                                    <th>Medical card</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
 
-                            </tbody>
-                        </table>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <c:forEach items="${patients}" var="pt">
+                                    <tr>
+                                        <td><c:out value="${pt.id}"/></td>
+                                        <td><c:out value="${pt.name}"/></td>
+                                        <td><c:out value="${pt.surname}"/></td>
+                                        <td><c:out value="${pt.dateOfBirth}"/></td>
+                                        <td><c:out value="${pt.pesel}"/></td>
+                                        <td><c:out value="${pt.city}"/></td>
+                                        <td><c:out value="${pt.street}"/></td>
+                                        <td><c:out value="${pt.zipCode}"/></td>
+                                        <td><c:out value="${pt.houseNumber}"/></td>
+                                        <td><c:out value="${pt.apartmentNumber}"/></td>
+                                        <td><c:out value="${pt.phoneNumber}"/></td>
+                                        <td><c:out value="${pt.email}"/></td>
+                                        <td><a href="/patient/details/${pt.id}" class="tooltipped"
+                                               data-position="bottom"
+                                               data-tooltip="Medical card"><i class="material-icons">folder_shared</i></a></td>
+                                        <td><a href="/patient/edit/${pt.id}" class="tooltipped"
+                                               data-position="bottom"
+                                               data-tooltip="edit"><i class="material-icons">edit</i></a></td>
+                                        <td><a href="/patient/delete/${pt.id}" class="tooltipped"
+                                               data-position="bottom"
+                                               data-tooltip="delete"><i class="material-icons">delete</i></a></td>
+                                    </tr>
+                                </c:forEach>
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </main>
-
-
 
 
 <script type="text/javascript" src="<c:url value="/js/jquery-3.4.1.slim.min.js"/>"></script>

@@ -21,8 +21,14 @@
 <main>
     <div class="row row-container">
         <jsp:include page="navbar.jsp"/>
+            <div class="col s3 offset-s3">
+                <div class="card">
+                    <div class="card-content">
+                        <h5 class="h4-own center-align"> <i class="small material-icons blue-text prefix">accessibility</i>Patients web app</h5>
+                    </div>
+                </div>
+            </div>
         <div class="col s12 l10">
-            <h5>TEST</h5>
             <div class="card">
                 <div class="card-content">
                    TEST

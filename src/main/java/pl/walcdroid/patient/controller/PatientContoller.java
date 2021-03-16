@@ -10,11 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.walcdroid.patient.entity.Patient;
-import pl.walcdroid.patient.repository.PatientRepository;
 import pl.walcdroid.patient.service.PatientService;
 
 import java.util.List;
-import java.util.Optional;
+
 
 
 @Controller
@@ -57,6 +56,14 @@ public class PatientContoller {
     public String editPost (Patient patient) {
         this.patientService.save(patient);
         return "redirect:/patient/list";
+    }
+
+
+    @GetMapping("/details/{id}")
+    public String details (@PathVariable Long id, Model model) {
+        Patient patient = this.patientService.getById(id);
+        model.addAttribute("patient", patient);
+        return "Patient/Patient_DETAILS";
     }
 
     @GetMapping("/delete/{id}")
