@@ -10,10 +10,10 @@
     <link type="text/css" rel="stylesheet" href="<c:url value="/css/style1.css"/>">
 </head>
 <body>
-<%@include file="../HomePage/header.jsp" %>
+<%@include file="../HomePage/Header.jsp" %>
 <main>
     <div class="row row-container">
-        <jsp:include page="../HomePage/navbar.jsp"/>
+        <jsp:include page="../HomePage/Navbar.jsp"/>
         <div class="col s3 offset-s3">
           <div class="card">
             <div class="card-content">
@@ -38,11 +38,11 @@
                                     <th>Surname</th>
                                     <th>Date of birth</th>
                                     <th>Pesel</th>
-                                    <th>City</th>
                                     <th>Street</th>
-                                    <th>Postcode</th>
                                     <th>House no.</th>
                                     <th>Apartment no.</th>
+                                    <th>Postcode</th>
+                                    <th>City</th>
                                     <th>Phone no.</th>
                                     <th>Email</th>
                                     <th>Medical card</th>
@@ -59,11 +59,11 @@
                                         <td><c:out value="${pt.surname}"/></td>
                                         <td><c:out value="${pt.dateOfBirth}"/></td>
                                         <td><c:out value="${pt.pesel}"/></td>
-                                        <td><c:out value="${pt.city}"/></td>
                                         <td><c:out value="${pt.street}"/></td>
-                                        <td><c:out value="${pt.zipCode}"/></td>
                                         <td><c:out value="${pt.houseNumber}"/></td>
                                         <td><c:out value="${pt.apartmentNumber}"/></td>
+                                        <td><c:out value="${pt.zipCode}"/></td>
+                                        <td><c:out value="${pt.city}"/></td>
                                         <td><c:out value="${pt.phoneNumber}"/></td>
                                         <td><c:out value="${pt.email}"/></td>
                                         <td><a href="/patient/details/${pt.id}" class="tooltipped"

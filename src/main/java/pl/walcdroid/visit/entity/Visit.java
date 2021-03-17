@@ -14,9 +14,10 @@ public class Visit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDateTime visitDate;
+    private String visitDate;
     private String charge;
     private String visitDescription;
+    private String location;
 
     @ManyToOne
     private Patient patient;
@@ -37,11 +38,11 @@ public class Visit {
         return this;
     }
 
-    public LocalDateTime getVisitDate() {
+    public String getVisitDate() {
         return visitDate;
     }
 
-    public Visit setVisitDate(LocalDateTime visitDate) {
+    public Visit setVisitDate(String visitDate) {
         this.visitDate = visitDate;
         return this;
     }
@@ -61,6 +62,15 @@ public class Visit {
 
     public Visit setVisitDescription(String visitDescription) {
         this.visitDescription = visitDescription;
+        return this;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public Visit setLocation(String location) {
+        this.location = location;
         return this;
     }
 

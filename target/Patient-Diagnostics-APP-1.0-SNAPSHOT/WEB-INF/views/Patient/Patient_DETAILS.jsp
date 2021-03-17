@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Patients List</title>
+    <title>Patients Details</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -10,10 +10,10 @@
     <link type="text/css" rel="stylesheet" href="<c:url value="/css/style1.css"/>">
 </head>
 <body>
-<%@include file="../HomePage/header.jsp" %>
+<%@include file="../HomePage/Header.jsp" %>
 <main>
     <div class="row row-container">
-        <jsp:include page="../HomePage/navbar.jsp"/>
+        <jsp:include page="../HomePage/Navbar.jsp"/>
         <div class="col s3 offset-s3">
             <div class="card">
                 <div class="card-content">

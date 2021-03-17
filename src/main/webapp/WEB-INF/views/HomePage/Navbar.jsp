@@ -26,8 +26,9 @@
                 class="material-icons">accessibility</i><span class="black-text">Patients</span></a>
         <a href="/visit/list" class="collection-item collection-item-own text-black-50"><i
                 class="material-icons">list_alt</i><span class="black-text">Visits</span></a>
+        <a href="/medical/list" class="collection-item collection-item-own text-black-50"><i
+                class="material-icons">control_point</i><span class="black-text">Examinations</span></a>
 
     </div>
 
 </div>
-<script type="text/javascript" src="<c:url value="/js/cloak.js"/>"></script>

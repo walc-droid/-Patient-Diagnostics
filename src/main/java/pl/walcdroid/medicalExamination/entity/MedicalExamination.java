@@ -23,7 +23,7 @@ public class MedicalExamination {
     private Long id;
     private String type;
     private String description;
-    private String date;
+    private String cost;
     private String location;
 
 
@@ -62,12 +62,12 @@ public class MedicalExamination {
         return this;
     }
 
-    public String getDate() {
-        return date;
+    public String getCost() {
+        return cost;
     }
 
-    public MedicalExamination setDate(String date) {
-        this.date = date;
+    public MedicalExamination setCost(String cost) {
+        this.cost = cost;
         return this;
     }
 
