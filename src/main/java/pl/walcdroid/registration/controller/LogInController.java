@@ -2,6 +2,7 @@ package pl.walcdroid.registration.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.walcdroid.doctor.dto.DoctorDTO;
 import pl.walcdroid.registration.dto.LoginDTO;
@@ -36,6 +37,7 @@ public class LogInController {
         boolean validCredentials = loginService.validate(form.getLogin(), form.getPassword());
 
         if (!validCredentials) {
+            session.setAttribute("wrong",true);
             return "Registration/Login";
         }
         DoctorDTO doctorDTO = loginService.login(form.getLogin());

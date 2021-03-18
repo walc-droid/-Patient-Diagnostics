@@ -1,10 +1,12 @@
 package pl.walcdroid.registration.dto;
 
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 public class LoginDTO {
-
+    @NotNull
     private String login;
+    @NotNull
     private String password;
 
     public String getLogin() {

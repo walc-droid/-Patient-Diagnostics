@@ -18,6 +18,11 @@
             </div>
             <div class="card-content row-margin0">
                 <form action="/login" method="post">
+                    <c:if test="${wrong}">
+                        <div class="row red-text center-align">
+                            <h5 class="h4-own">Wrong login or password!</h5>
+                        </div>
+                    </c:if>
                     <div class="input-field">
                         <i class="material-icons  blue-text prefix">account_box</i>
                         <input type="text" name="login" id="login" class="validate" required>

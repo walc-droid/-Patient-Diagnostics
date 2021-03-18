@@ -1,18 +1,25 @@
 package pl.walcdroid.registration.dto;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 public class RegistrationDTO {
 
+    @Size(min= 3, max = 10, message = "Login need to have 3 or more characters")
     private String login;
-
+    @Email(message = "Wrong input!")
+    @NotEmpty (message = "Cannot be empty")
     private String email;
-
+    @NotEmpty (message = "Cannot be empty")
     private String password;
-
+    @NotEmpty(message = "Cannot be empty")
     private String confirmedPassword;
-
+    @NotEmpty(message = "Cannot be empty")
     private String name;
-
+    @NotEmpty(message = "Cannot be empty")
     private String surname;
 
     public String getLogin() {
