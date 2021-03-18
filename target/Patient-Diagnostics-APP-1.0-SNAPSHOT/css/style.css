@@ -6,6 +6,61 @@ body {
     background-repeat: no-repeat;
 
 }
+nav {
+    height: 30px;
+    line-height: 30px;
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    height: 30px;
+    line-height: 30px;
+}
+
+nav .button-collapse i {
+    height: 30px;
+    line-height: 30px;
+}
+
+nav .brand-logo {
+    font-size: 1.6rem;
+}
+
+@media only screen and (min-width: 601px){
+    nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
+.h4-own {
+    align-content: center;
+    font-weight: bold;
+}
+
+
+.collection-own {
+    border: none;
+}
+
+.collection-own .collection-item-own {
+    background-color: white;
+    border-bottom: none;
+}
+
+.collection-own .collection-item-own i {
+    margin-right: 25px;
+    display: block;
+    float: left;
+    color: #42a5f5;
+}
+
+th, td {
+    font-size: 12px;
+    text-align: center;
+    padding: 8px;
+}
+
+
 
 main {
     flex: 1 0 auto;
@@ -19,21 +74,15 @@ form.container {
     margin: 36px auto 80px;
 }
 
-.col h5 {
-    text-transform: uppercase;
-    margin: 20px 0;
-}
-
 .table-overflow {
     overflow-x: auto;
 }
 
-.btn-add {
-    margin: 0 30px;
-}
+
 
 .row-margin0 {
-    margin-bottom: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .row-margin0 span {
@@ -46,65 +95,55 @@ form.container {
     margin: 20px;
 }
 
-.collection-item-own ii {
-    margin-right: 15px;
-    display: block;
-    float: left;
+/* Inactive/Active Default input field color */
+.input-field input[type]:not([readonly]),
+.input-field input[type]:focus:not([readonly]),
+.input-field textarea:not([readonly]),
+.input-field textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #000000;
+    box-shadow: 0 1px 0 0 #000000;
 }
 
-
-
-.collection-own .collection-item-own i {
-    background-color: white;
-    border-bottom: black;
-    margin-right: 15px;
-    display: block;
-    float: left;
+/* Inactive/Active Default input label color */
+.input-field input[type]:focus:not([readonly])+label,
+.input-field textarea:focus:not([readonly])+label {
+    color: #000000;
 }
 
-.tabs .tab a {
-    color: black;
+/* Active/Inactive Invalid input field colors */
+.input-field input[type].invalid,
+.input-field input[type].invalid:focus,
+.input-field textarea.invalid,
+.input-field textarea.invalid:focus {
+    border-bottom: 1px solid #000000;
+    box-shadow: 0 1px 0 0 #000000;
 }
 
-.tabs .indicator {
-    background-color: black;
+/* Active/Inactive Invalid input label color */
+.input-field input[type].invalid:focus+label,
+.input-field input[type].invalid~.helper-text::after,
+.input-field input[type].invalid:focus~.helper-text::after,
+.input-field textarea.invalid:focus+label,
+.input-field textarea.invalid~.helper-text::after,
+.input-field textarea.invalid:focus~.helper-text::after {
+    color: #000000;
 }
 
-.tabs .tab a:focus, .tabs .tab a:focus.active {
-    background-color: black;
+/* Active/Inactive Valid input field color */
+.input-field input[type].valid,
+.input-field input[type].valid:focus,
+.input-field textarea.valid,
+.input-field textarea.valid:focus {
+    border-bottom: 1px solid #000000;
+    box-shadow: 0 1px 0 0 #000000;
 }
 
-/*.tabs .tab a:hover, .tabs .tab a.active {*/
-/*    color: #26a69a;*/
-/*}*/
-
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
-    color: black;
+/* Active/Inactive Valid input label color */
+.input-field input[type].valid:focus+label,
+.input-field input[type].valid~.helper-text::after,
+.input-field input[type].valid:focus~.helper-text::after,
+.input-field textarea.valid:focus+label,
+.input-field textarea.valid~.helper-text::after,
+.input-field textarea.valid:focus~.helper-text::after {
+    color: #000000;
 }
-
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
-    color: black;
-}
-/* styles for login form */
-.card-login{
-    margin-top:15%;
-}
-.card-title-login h6{
-    margin:0 !important;
-    padding-bottom:8px !important;
-    padding-top:8px !important;
-}
-
-.container-fluid{
-    margin:0 auto;
-    width:90%;
-}
-
-/*.main-login{*/
-/*    width: 100%;*/
-/*    min-height: 90vh;*/
-/*    background:linear-gradient(180deg,#00838F,#00BCD4);*/
-/*    background-size: cover;*/
-/*}*/
-/* login end */
-

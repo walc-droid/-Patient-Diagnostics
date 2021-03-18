@@ -1,0 +1,156 @@
+
+body {
+    background-image: url("../images/background2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+nav {
+    height: 30px;
+    line-height: 30px;
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    height: 30px;
+    line-height: 30px;
+}
+
+nav .button-collapse i {
+    height: 30px;
+    line-height: 30px;
+}
+
+nav .brand-logo {
+    font-size: 1.6rem;
+}
+
+@media only screen and (min-width: 601px){
+    nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
+.h4-own {
+    align-content: center;
+    font-weight: bold;
+}
+
+.h4-own-i {
+    align-content: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+.collection-own {
+    border: none;
+}
+
+.collection-own .collection-item-own {
+    background-color: white;
+    border-bottom: none;
+}
+
+.collection-own .collection-item-own i {
+    margin-right: 25px;
+    display: block;
+    float: left;
+    color: #42a5f5;
+}
+
+th, td {
+    font-size: 12px;
+    text-align: center;
+    padding: 8px;
+}
+
+
+
+main {
+    flex: 1 0 auto;
+}
+
+strong {
+    font-weight: bold;
+}
+
+form.container {
+    margin: 36px auto 80px;
+}
+
+.table-overflow {
+    overflow-x: auto;
+}
+
+
+
+.row-margin0 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.row-margin0 span {
+    height: 48px;
+    line-height: 48px;
+    margin-left: 20px;
+}
+
+.row-container {
+    margin: 20px;
+}
+
+/* Inactive/Active Default input field color */
+.input-field input[type]:not([readonly]),
+.input-field input[type]:focus:not([readonly]),
+.input-field textarea:not([readonly]),
+.input-field textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #000000;
+    box-shadow: 0 1px 0 0 #000000;
+}
+
+/* Inactive/Active Default input label color */
+.input-field input[type]:focus:not([readonly])+label,
+.input-field textarea:focus:not([readonly])+label {
+    color: #000000;
+}
+
+/* Active/Inactive Invalid input field colors */
+.input-field input[type].invalid,
+.input-field input[type].invalid:focus,
+.input-field textarea.invalid,
+.input-field textarea.invalid:focus {
+    border-bottom: 1px solid #000000;
+    box-shadow: 0 1px 0 0 #000000;
+}
+
+/* Active/Inactive Invalid input label color */
+.input-field input[type].invalid:focus+label,
+.input-field input[type].invalid~.helper-text::after,
+.input-field input[type].invalid:focus~.helper-text::after,
+.input-field textarea.invalid:focus+label,
+.input-field textarea.invalid~.helper-text::after,
+.input-field textarea.invalid:focus~.helper-text::after {
+    color: #000000;
+}
+
+/* Active/Inactive Valid input field color */
+.input-field input[type].valid,
+.input-field input[type].valid:focus,
+.input-field textarea.valid,
+.input-field textarea.valid:focus {
+    border-bottom: 1px solid #000000;
+    box-shadow: 0 1px 0 0 #000000;
+}
+
+/* Active/Inactive Valid input label color */
+.input-field input[type].valid:focus+label,
+.input-field input[type].valid~.helper-text::after,
+.input-field input[type].valid:focus~.helper-text::after,
+.input-field textarea.valid:focus+label,
+.input-field textarea.valid~.helper-text::after,
+.input-field textarea.valid:focus~.helper-text::after {
+    color: #000000;
+}
+

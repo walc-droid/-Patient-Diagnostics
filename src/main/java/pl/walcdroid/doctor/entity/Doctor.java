@@ -22,6 +22,8 @@ public class Doctor {
     @NotEmpty(message = "Cannot be empty!")
     private String surname;
 
+    @OneToOne(fetch = FetchType.EAGER)
+    private DoctorLoginDetails doctorLoginDetails;
 
     @ManyToMany(mappedBy = "doctorList")
     private List<MedicalExamination> medicalExaminations = new ArrayList<>();
@@ -56,12 +58,20 @@ public class Doctor {
         return this;
     }
 
+    public DoctorLoginDetails getDoctorLoginDetails() {
+        return doctorLoginDetails;
+    }
 
-    public List<MedicalExamination> getMedicalResearches() {
+    public Doctor setDoctorLoginDetails(DoctorLoginDetails doctorLoginDetails) {
+        this.doctorLoginDetails = doctorLoginDetails;
+        return this;
+    }
+
+    public List<MedicalExamination> getMedicalExaminations() {
         return medicalExaminations;
     }
 
-    public Doctor setMedicalResearches(List<MedicalExamination> medicalExaminations) {
+    public Doctor setMedicalExaminations(List<MedicalExamination> medicalExaminations) {
         this.medicalExaminations = medicalExaminations;
         return this;
     }

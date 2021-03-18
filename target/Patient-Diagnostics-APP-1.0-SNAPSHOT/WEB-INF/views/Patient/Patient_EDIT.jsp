@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="<c:url value="/css/materialize.min.css"/>">
-    <link type="text/css" rel="stylesheet" href="<c:url value="/css/style1.css"/>">
+    <link type="text/css" rel="stylesheet" href="<c:url value="/css/style.css"/>">
     <%@ taglib prefix="input" uri="http://www.springframework.org/tags/form" %>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 </head>
@@ -92,7 +92,7 @@
                                     <div class="input-field col m11 l3 xl3">
                                         <i class="material-icons prefix blue-text">mail_outline</i>
                                         <input id="email" type="text" value="${patient.email}" name="email">
-                                        <label for="email">Email</label>
+                                        <label for="email">E-mail</label>
                                     </div>
                                     <div class="input-field col m11 l3 xl3">
                                         <i class="material-icons prefix blue-text">call</i>
