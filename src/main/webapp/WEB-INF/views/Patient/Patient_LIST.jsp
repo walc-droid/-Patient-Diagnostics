@@ -72,12 +72,25 @@
                                         <td><a href="/patient/edit/${pt.id}" class="tooltipped"
                                                data-position="bottom"
                                                data-tooltip="edit"><i class="material-icons">edit</i></a></td>
-                                        <td><a href="/patient/delete/${pt.id}" class="tooltipped"
+                                        <td>
+                                            <!-- Modal Trigger -->
+                                            <a class="modal-trigger tooltipped" href="#modal${pt.id}"
                                                data-position="bottom"
-                                               data-tooltip="delete"><i class="material-icons">delete</i></a></td>
+                                               data-tooltip="delete"><i class="material-icons">delete</i></a>
+                                            <!-- Modal Structure -->
+                                            <div id="modal${pt.id}" class="modal">
+                                                <div class="modal-content">
+                                                    <h6>Are you sure to delete
+                                                        patient ${pt.name} ${pt.surname}?</h6>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="/patient/delete/${pt.id}"
+                                                       class="modal-close waves-effect red white-text btn-flat">Delete</a>
+                                                </div>
+                                            </div>
+                                        </td>
                                     </tr>
                                 </c:forEach>
-
                                 </tbody>
                             </table>
                         </div>

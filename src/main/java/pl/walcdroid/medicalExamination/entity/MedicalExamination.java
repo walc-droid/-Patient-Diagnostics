@@ -8,6 +8,8 @@ import pl.walcdroid.visit.entity.Visit;
 import javax.persistence.*;
 import javax.persistence.criteria.Fetch;
 import javax.print.Doc;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BinaryOperator;
@@ -21,9 +23,12 @@ public class MedicalExamination {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Size(min = 1 , message = "Minimum size is 2 characters!")
     private String type;
     private String description;
+    @NotEmpty(message = "Enter cost!")
     private String cost;
+    @Size(min = 3 , message = "Minimum size is 3 characters!")
     private String location;
 
 

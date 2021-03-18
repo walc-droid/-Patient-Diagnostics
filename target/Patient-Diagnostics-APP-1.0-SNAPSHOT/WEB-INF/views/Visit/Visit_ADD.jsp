@@ -33,8 +33,9 @@
                             <div class="row row-margin0">
                                 <div class="input-field col s4 offset-s2">
                                     <i class="material-icons prefix blue-text">date_range</i>
-                                    <input id="visitDate" type="text" class="datepicker" name="visitDate">
+                                    <input id="visitDate" type="text" class="datepicker" name="visitDate" required>
                                     <label for="visitDate">Date of visit</label>
+                                    <form:errors cssClass="red-text" path="visitDate"/>
                                 </div>
                                 <div class="input-field col s4">
                                     <i class="material-icons prefix blue-text">accessibility</i>
@@ -63,19 +64,21 @@
                                             <option value="${medical.id}">${medical.type}</option>
                                         </c:forEach>
                                     </select>
-                                    <label for="medicalExamination">Select patient for visit</label>
+                                    <label for="medicalExamination">Select medical examination</label>
                                 </div>
                             </div>
                             <div class="row row-margin0">
                                 <div class="input-field col s4 offset-s2">
                                     <i class="material-icons prefix blue-text">location_on</i>
-                                    <input id="location" type="text" name="location">
+                                    <input id="location" type="text" name="location" required>
                                     <label for="location">Location</label>
+                                    <form:errors cssClass="red-text" path="location"/>
                                 </div>
                                 <div class="input-field col s4">
                                     <i class="material-icons prefix blue-text">attach_money</i>
-                                    <input id="charge" type="number" min="0" step="5" name="charge">
+                                    <input id="charge" type="number" min="0" step="5" name="charge" required>
                                     <label for="charge">Charge</label>
+                                    <form:errors cssClass="red-text" path="charge"/>
                                 </div>
                             </div>
                             <div class="row row-margin0">

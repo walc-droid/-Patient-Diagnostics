@@ -3,6 +3,7 @@ package pl.walcdroid.visit.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.walcdroid.doctor.entity.Doctor;
 import pl.walcdroid.doctor.repository.DoctorRepository;
@@ -17,6 +18,7 @@ import pl.walcdroid.visit.entity.Visit;
 import pl.walcdroid.visit.repository.VisitRepository;
 import pl.walcdroid.visit.service.VisitService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -51,7 +53,12 @@ public class VisitController {
     }
 
     @PostMapping("/add")
-    public String addPost(Visit visit) {
+    public String addPost(@Valid Visit visit, BindingResult violations) {
+
+        if (violations.hasErrors()) {
+            return "Visit/Visit_ADD";
+        }
+
         this.visitService.save(visit);
         return "redirect:/visit/list";
     }
@@ -64,7 +71,12 @@ public class VisitController {
     }
 
     @PostMapping("/edit/{id}")
-    public String editPost (Visit visit) {
+    public String editPost (@Valid Visit visit, BindingResult violations) {
+
+        if (violations.hasErrors()) {
+            return "Visit/Visit_EDIT";
+        }
+
         this.visitService.save(visit);
         return "redirect:/visit/list";
     }

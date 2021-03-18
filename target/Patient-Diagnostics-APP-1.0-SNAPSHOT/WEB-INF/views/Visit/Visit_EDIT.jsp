@@ -32,8 +32,9 @@
                             <div class="row row-margin0">
                                 <div class="input-field col s4 offset-s2">
                                     <i class="material-icons prefix blue-text">date_range</i>
-                                    <input id="visitDate" type="text" class="datepicker" value="${visit.visitDate}" name="visitDate">
+                                    <input id="visitDate" type="text" class="datepicker" value="${visit.visitDate}" name="visitDate" required>
                                     <label for="visitDate">Date of visit</label>
+                                    <form:errors cssClass="red-text" path="visitDate"/>
                                 </div>
                                 <div class="input-field col s4">
                                     <i class="material-icons prefix blue-text">accessibility</i>
@@ -68,13 +69,15 @@
                             <div class="row row-margin0">
                                 <div class="input-field col s4 offset-s2">
                                     <i class="material-icons prefix blue-text">location_on</i>
-                                    <input id="location" type="text" value="${visit.location}"name="location">
+                                    <input id="location" type="text" value="${visit.location}"name="location" required>
                                     <label for="location">Location</label>
+                                    <form:errors cssClass="red-text" path="location"/>
                                 </div>
                                 <div class="input-field col s4">
                                     <i class="material-icons prefix blue-text">attach_money</i>
-                                    <input id="charge" type="number" min="0" step="5" value="${visit.charge}" name="charge">
+                                    <input id="charge" type="number" min="0" step="5" value="${visit.charge}" name="charge" required>
                                     <label for="charge">Charge</label>
+                                    <form:errors cssClass="red-text" path="charge"/>
                                 </div>
                             </div>
                             <div class="row row-margin0">

@@ -37,6 +37,11 @@ nav .brand-logo {
     font-weight: bold;
 }
 
+.h4-own-i {
+    align-content: center;
+    font-weight: bold;
+}
+
 
 .collection-own {
     border: none;
@@ -146,4 +151,30 @@ form.container {
 .input-field textarea.valid~.helper-text::after,
 .input-field textarea.valid:focus~.helper-text::after {
     color: #000000;
+}
+
+.input-field input[type=text] + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #000000 !important;
+}
+
+.input-field input[type=text], .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #000000 !important;
+    box-shadow: 0 1px 0 0 #000000 !important;
+}
+
+
+.input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #000000 !important;
+}
+
+.input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #000000 !important;
+    box-shadow: 0 1px 0 0 #000000 !important;
+}
+
+
+.test {
+    font-size: 15px;
+    color: red;
+    font-weight: bold;
 }

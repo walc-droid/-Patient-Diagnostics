@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = {"/","/patient/*", "/visit/*", "/medical/*"})
+//@WebFilter(urlPatterns = {"/","/patient/*", "/visit/*", "/medical/*","/user/*"})
 public class LoginFilter implements Filter {
 
     @Override

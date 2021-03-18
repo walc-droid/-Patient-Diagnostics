@@ -3,6 +3,7 @@ package pl.walcdroid.medicalExamination.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.walcdroid.doctor.entity.Doctor;
 import pl.walcdroid.doctor.repository.DoctorRepository;
@@ -12,6 +13,7 @@ import pl.walcdroid.medicalExamination.repository.MedicalExaminationRepository;
 import pl.walcdroid.medicalExamination.service.MedicalExaminationService;
 
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,7 +52,12 @@ public class MedicalExaminationController {
     }
 
     @PostMapping("/add")
-    public String addPost (MedicalExamination medicalExamination) {
+    public String addPost (@Valid MedicalExamination medicalExamination, BindingResult violations) {
+
+        if (violations.hasErrors()) {
+            return "MedicalExamination/MedicalExamination_ADD";
+        }
+
         this.medicalExaminationService.save(medicalExamination);
         return "redirect:/medical/list";
     }
@@ -63,7 +70,12 @@ public class MedicalExaminationController {
     }
 
     @PostMapping("/edit/{id}")
-    public String editPost (MedicalExamination medicalExamination) {
+    public String editPost (@Valid MedicalExamination medicalExamination, BindingResult violations) {
+
+        if (violations.hasErrors()) {
+            return "MedicalExamination/MedicalExamination_EDIT";
+        }
+
         this.medicalExaminationService.save(medicalExamination);
         return "redirect:/medical/list";
     }

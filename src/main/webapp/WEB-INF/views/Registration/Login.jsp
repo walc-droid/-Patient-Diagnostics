@@ -20,12 +20,12 @@
                 <form action="/login" method="post">
                     <div class="input-field">
                         <i class="material-icons  blue-text prefix">account_box</i>
-                        <input type="text" name="login" id="login" class="validate">
+                        <input type="text" name="login" id="login" class="validate" required>
                         <label for="login">Login</label>
                     </div>
                     <div class="input-field">
                         <i class="material-icons blue-text prefix">lock</i>
-                        <input type="password" name="password" id="password">
+                        <input type="password" name="password" id="password" required>
                         <label for="password">Password</label>
                     </div>
                     <div class="card-action">

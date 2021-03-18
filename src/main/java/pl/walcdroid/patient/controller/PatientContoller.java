@@ -3,6 +3,7 @@ package pl.walcdroid.patient.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.walcdroid.patient.entity.Patient;
 import pl.walcdroid.patient.service.PatientService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -40,7 +42,12 @@ public class PatientContoller {
     }
 
     @PostMapping("/add")
-    public String addPost (Patient patient) {
+    public String addPost (@Valid Patient patient, BindingResult violations) {
+
+        if (violations.hasErrors()) {
+            return "Patient/Patient_ADD";
+        }
+
         this.patientService.save(patient);
         return "redirect:/patient/list";
     }
@@ -53,7 +60,12 @@ public class PatientContoller {
     }
 
     @PostMapping("/edit/{id}")
-    public String editPost (Patient patient) {
+    public String editPost (@Valid Patient patient,BindingResult violations) {
+
+        if (violations.hasErrors()) {
+            return "Patient/Patient_EDIT";
+        }
+
         this.patientService.save(patient);
         return "redirect:/patient/list";
     }

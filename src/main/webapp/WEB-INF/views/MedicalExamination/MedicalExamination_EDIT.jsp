@@ -34,6 +34,7 @@
                                     <i class="material-icons prefix blue-text">healing</i>
                                     <input id="type" type="text" value="${medicalExamination.type}" name="type">
                                     <label for="type">Type</label>
+                                    <form:errors cssClass="red-text" path="type"/>
                                 </div>
                             </div>
                             <div class="row row-margin0">
@@ -41,6 +42,7 @@
                                     <i class="material-icons prefix blue-text">location_on</i>
                                     <input id="location" type="text" value="${medicalExamination.location}" name="location">
                                     <label for="location">Location</label>
+                                    <form:errors cssClass="red-text" path="location"/>
                                 </div>
                             </div>
                             <div class="row">
@@ -48,6 +50,7 @@
                                     <i class="material-icons prefix blue-text">attach_money</i>
                                     <input id="cost" type="number" value="${medicalExamination.cost}"  min="0" step="5" name="cost">
                                     <label for="cost">Cost</label>
+                                    <form:errors cssClass="red-text" path="cost"/>
                                 </div>
                             </div>
                             <div class="row row-margin0">

@@ -35,63 +35,74 @@
                                     <i class="material-icons prefix blue-text">account_circle</i>
                                     <input id="name" type="text" name="name" required>
                                     <label for="name">Name</label>
+                                    <form:errors cssClass="red-text" path="name"/>
                                 </div>
 
                                 <div class="input-field col m12 l6 xl4">
                                     <i class="material-icons prefix blue-text">account_box</i>
                                     <input id="surname" type="text" name="surname" required>
                                     <label for="surname">Surame</label>
+                                    <form:errors cssClass="red-text" path="surname"/>
                                 </div>
                             </div>
                             <div class="row row-margin0">
                                 <div class="input-field col m12 l6 xl4">
                                     <i class="material-icons prefix blue-text">date_range</i>
-                                    <input id="dateOfBirth" type="text" class="datepicker" name="dateOfBirth">
+                                    <input id="dateOfBirth" type="text" class="datepicker" name="dateOfBirth" required>
                                     <label for="dateOfBirth">Date of birth</label>
+                                    <form:errors cssClass="red-text" path="dateOfBirth"/>
                                 </div>
                                 <div class="input-field col m12 l6 xl4">
                                     <i class="material-icons prefix blue-text">perm_identity</i>
-                                    <input id="pesel" type="text" name="pesel">
+                                    <input id="pesel" type="text" name="pesel" required>
                                     <label for="pesel">Pesel</label>
+                                    <form:errors cssClass="red-text" path="pesel"/>
                                 </div>
                             </div>
                             <div class="row row-margin0">
                                 <div class="input-field col m12 l4 xl4">
                                     <i class="material-icons prefix blue-text">location_city</i>
-                                    <input id="city" type="text" name="city">
+                                    <input id="city" type="text" name="city" required>
                                     <label for="city">City</label>
+                                    <form:errors cssClass="red-text" path="city"/>
                                 </div>
                                 <div class="input-field col m12 l4 xl4">
                                     <i class="material-icons prefix blue-text">edit_road</i>
-                                    <input id="street" type="text" name="street">
+                                    <input id="street" type="text" name="street" required>
                                     <label for="street">Street</label>
+                                    <form:errors cssClass="red-text" path="street"/>
                                 </div>
                                 <div class="input-field col m12 l4 xl4">
                                     <i class="material-icons prefix blue-text">code</i>
-                                    <input id="zipCode" type="text" name="zipCode">
+                                    <input id="zipCode" type="text" name="zipCode" required>
                                     <label for="zipCode">Postcode</label>
+                                    <form:errors cssClass="red-text" path="zipCode"/>
                                 </div>
                             </div>
                             <div class="row row-margin0">
                                 <div class="input-field col m11 l3 xl3">
                                     <i class="material-icons prefix blue-text">home</i>
-                                    <input id="houseNumber" type="text" name="houseNumber">
+                                    <input id="houseNumber" type="text" name="houseNumber" required>
                                     <label for="houseNumber">House number</label>
+                                    <form:errors cssClass="red-text" path="houseNumber"/>
                                 </div>
                                 <div class="input-field col m11 l3 xl3">
                                     <i class="material-icons prefix blue-text">filter_1</i>
-                                    <input id="apartmentNumber" type="text" name="apartmentNumber">
+                                    <input id="apartmentNumber" type="text" name="apartmentNumber" required>
                                     <label for="apartmentNumber">Apartment number</label>
+                                    <form:errors cssClass="red-text" path="apartmentNumber"/>
                                 </div>
                                 <div class="input-field col m11 l3 xl3">
                                     <i class="material-icons prefix blue-text">mail_outline</i>
-                                    <input id="email" type="text" name="email">
+                                    <input id="email" type="text" name="email" required>
                                     <label for="email">E-mail</label>
+                                    <form:errors cssClass="red-text" path="email"/>
                                 </div>
                                 <div class="input-field col m11 l3 xl3">
                                     <i class="material-icons prefix blue-text">call</i>
-                                    <input id="phoneNumber" type="text" name="phoneNumber">
+                                    <input id="phoneNumber" type="text" name="phoneNumber" required>
                                     <label for="phoneNumber">Phone number</label>
+                                    <form:errors cssClass="red-text" path="phoneNumber"/>
                                 </div>
 
                             </div>

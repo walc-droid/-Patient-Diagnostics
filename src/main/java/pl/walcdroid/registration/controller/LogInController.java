@@ -14,12 +14,11 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/login")
 public class LogInController {
 
-
     @Autowired
     private LoginService loginService;
 
     @GetMapping
-    public String loginPage(@SessionAttribute(value = "logInUser", required = false) DoctorDTO loggedInUser) {
+    public String login(@SessionAttribute(value = "logInUser", required = false) DoctorDTO loggedInUser) {
         if (loggedInUser != null) {
             return "redirect:/";
         }
@@ -27,7 +26,7 @@ public class LogInController {
     }
 
     @PostMapping
-    public String processLogin(@SessionAttribute(value = "logInUser", required = false) DoctorDTO loggedUser,
+    public String postLogin(@SessionAttribute(value = "logInUser", required = false) DoctorDTO loggedUser,
                                @ModelAttribute("loginForm") LoginDTO form,
                                HttpSession session) {
         if (loggedUser != null) {
@@ -35,6 +34,7 @@ public class LogInController {
         }
 
         boolean validCredentials = loginService.validate(form.getLogin(), form.getPassword());
+
         if (!validCredentials) {
             return "Registration/Login";
         }

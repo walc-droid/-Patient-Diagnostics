@@ -22,7 +22,7 @@ public class Doctor {
     @NotEmpty(message = "Cannot be empty!")
     private String surname;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
     private DoctorLoginDetails doctorLoginDetails;
 
     @ManyToMany(mappedBy = "doctorList")

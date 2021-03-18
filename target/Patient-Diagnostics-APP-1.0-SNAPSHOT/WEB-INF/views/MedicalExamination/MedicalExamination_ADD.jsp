@@ -33,22 +33,25 @@
                             <div class="row row-margin0">
                                 <div class="input-field col s4 offset-s4">
                                     <i class="material-icons prefix blue-text">healing</i>
-                                    <input id="type" type="text" name="type">
+                                    <input id="type" type="text" name="type" required>
                                     <label for="type">Type</label>
+                                    <form:errors cssClass="red-text" path="type"/>
                                 </div>
                             </div>
                             <div class="row row-margin0">
                                 <div class="input-field col s4 offset-s4">
                                     <i class="material-icons prefix blue-text">location_on</i>
-                                    <input id="location" type="text" name="location">
+                                    <input id="location" type="text" name="location" required>
                                     <label for="location">Location</label>
+                                    <form:errors cssClass="red-text" path="location"/>
                                 </div>
                             </div>
                             <div class="row ">
                                 <div class="input-field col s4 offset-s4">
                                     <i class="material-icons prefix blue-text">attach_money</i>
-                                    <input id="cost" type="number" min="0" step="5" name="cost">
+                                    <input id="cost" type="number" min="0" step="5" name="cost" required>
                                     <label for="cost">Cost</label>
+                                    <form:errors cssClass="red-text" path="cost"/>
                                 </div>
                             </div>
                             <div class="row row-margin0">

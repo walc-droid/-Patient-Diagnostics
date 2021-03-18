@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 public class LogOutController {
 
     @GetMapping
-    public String logout(HttpSession session) {
+    public String logout (HttpSession session) {
         if(session != null) {
             session.invalidate();
         }

@@ -28,6 +28,8 @@
                 class="material-icons">list_alt</i><span class="black-text">Visits</span></a>
         <a href="/medical/list" class="collection-item collection-item-own text-black-50"><i
                 class="material-icons">control_point</i><span class="black-text">Examinations</span></a>
+        <a href="/user/list" class="collection-item collection-item-own text-black-50"><i
+                class="material-icons">person</i><span class="black-text">Doctors</span></a>
 
     </div>
 

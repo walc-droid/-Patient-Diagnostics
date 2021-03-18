@@ -5,6 +5,8 @@ import pl.walcdroid.medicalExamination.entity.MedicalExamination;
 import pl.walcdroid.patient.entity.Patient;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Entity
@@ -14,16 +16,22 @@ public class Visit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotEmpty(message = "Enter date!")
     private String visitDate;
+    @NotEmpty(message = "Enter charge!")
     private String charge;
     private String visitDescription;
+    @Size(min = 3 , message = "Minimum size is 3 characters!")
     private String location;
+
 
     @ManyToOne
     private Patient patient;
 
+
     @OneToOne
     private Doctor doctor;
+
 
     @OneToOne
     private MedicalExamination medicalExamination;
